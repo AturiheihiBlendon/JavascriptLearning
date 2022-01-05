@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function bodyload(){
+                document.getElementById("pic").src="image.jpg";
+                document.getElementById("btnRegister").value="Register";
+                
+                
+            }
+        </script>
+
+    </head>
+    <body onload="bodyload()">
+        <div>
+            <img id="pic" width="400" height="400" border="2">
+        </div>
+        <div>
+            <form>
+                Name: <input type="text" id="txtName">
+                      <input type="button" id="btnRegister">
+            </form>
+        </div>
+
+    </body>
+</html>
