@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function Create(){
+                var name=prompt("Folder name: ", "New folder");
+                var msg=document.getElementById("msg");
+                (name==null)? document.write("Action Cancelled") : msg.innerHTML+="Folder created: "+name+"<br>";
+                
+            }
+        </script>
+
+    </head>
+    <body>
+        <form>
+            <div>
+                <input type="button" value="Create Folder" onclick="Create()">
+            </div>
+        </form>
+        
+        <div id="msg"></div>
+    </body>
+</html>
