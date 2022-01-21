@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function f1(){
+                var Product={
+                    Id : 1,
+                    Name : "Alexa Eco-dot",
+                    price : 45000,
+                    IsInStock : false,
+                    Quantity : 2,
+                    ShippedTo : ["Kira","Wakiso"],
+                    Total : function(){
+                        return Product.Quantity*Product.price;
+                    }
+                }
+                if(Product.IsInStock==true)
+                    stock="Available";
+                else
+                    stock="Out of stock";
+
+                    document.write("Id : "+Product.Id+ "<br>" + "Name : "+Product.Name+ "<br>" + "Is-in-Stock : "+stock+ "<br>" + "Quantity : "+Product.Quantity+ "<br>" +  "Shipped to : "+Product.ShippedTo+ "<br>" + "Total Amount : "+Product.Total() );
+            }
+            f1();
+        </script>
+
+    </head>
+    <body>
+
+    </body>
+</html>
