@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function ShowProducts(){
+                var Products=[
+                    {Id:1,Name:"Samsung Tv",price:800000,photo:"samsung tv.jpg"},
+                    {Id:2,Name:"Alexa Eco-dot",price:500000,photo:"alexa.jpg"},
+                    {Id:3,Name:"Iphone",price:1000000,photo:"iphone.jpg"},
+                    {Id:4,Name:"Nike Shoe",price:80000,photo:"nike.jpg"}
+                ];
+
+                var pic=document.getElementById("pic");
+                var prodId=document.getElementById("prodId");
+                var prodName=document.getElementById("prodName");
+                var prodprice=document.getElementById("prodprice");
+                var txtRange=document.getElementById("txtRange");
+
+                pic.src=Products[txtRange.value].photo;
+                prodId.innerHTML=Products[txtRange.value].Id;
+                prodName.innerHTML=Products[txtRange.value].Name;
+                prodprice.innerHTML=Products[txtRange.value].price;
+
+            }
+        </script>
+
+    </head>
+    <body>
+        <div>
+            <table width="500" border="2" align="center" cellspacing="4" cellpadding="4">
+                <tr>
+                    <td>
+                        <img src="" id="pic" width="300" height="200">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Product Id</td>
+                    <td id="prodId"></td>
+                </tr>
+
+                <tr>
+                    <td>Name</td>
+                    <td id="prodName"></td>
+                </tr>
+
+                <tr>
+                    <td>Price</td>
+                    <td id="prodprice"></td>
+                </tr>
+
+
+            </table>
+        </div>
+
+        <div align="center">
+            <input type="range" id="txtRange" min="0" max="4" value="0" onchange="ShowProducts()">
+        </div>
+
+    </body>
+</html>

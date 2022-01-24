@@ -2,30 +2,38 @@
 <html>
     <head>
         <script>
-            function f1(){
-                var Product={
-                    Id : 1,
-                    Name : "Alexa Eco-dot",
-                    price : 45000,
-                    IsInStock : false,
-                    Quantity : 2,
-                    ShippedTo : ["Kira","Wakiso"],
-                    Total : function(){
-                        return Product.Quantity*Product.price;
-                    }
-                }
-                if(Product.IsInStock==true)
-                    stock="Available";
-                else
-                    stock="Out of stock";
+            function Showproducts(){
+                var productNames =["alexa","samsung tv","iphone","nike shoes"];
+                var productImages =["alexa.jpg","samsung tv.jpg","iphone.jpg","nike.jpg"];
 
-                    document.write("Id : "+Product.Id+ "<br>" + "Name : "+Product.Name+ "<br>" + "Is-in-Stock : "+stock+ "<br>" + "Quantity : "+Product.Quantity+ "<br>" +  "Shipped to : "+Product.ShippedTo+ "<br>" + "Total Amount : "+Product.Total() );
+                var prodName = document.getElementById("ProdName");
+                var pic = document.getElementById("Pic");
+                var txtRange = document.getElementById("txtRange");
+
+                prodName.innerHTML=productNames[txtRange.value];
+                pic.src=productImages[txtRange.value];
             }
-            f1();
         </script>
 
     </head>
     <body>
+        <div>
+            <table width="500" border="2" cellspacing="5" cellpadding="5" align="center">
+                <tr>
+                    <td id="ProdName" align="center"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <img id="Pic" src="image.jpg" width="500" height="300">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="range" min="0" max="4" value="0" id="txtRange" onchange="Showproducts()">
+                    </td>
+                </tr>
 
+            </table>
+        </div>
     </body>
 </html>
