@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function Submit(){
+                var swe=document.getElementById("SWE");
+                var ml=document.getElementById("ML");
+                var esr=document.getElementById("ESR");
+                var eee=document.getElementById("EEE");
+                var msg=document.getElementById("msg");
+
+                var courses="";
+                if(swe.checked){
+                    courses+=swe.value + "<br>";
+                }
+
+                if(ml.checked){
+                    courses+=ml.value + "<br>";
+                }
+
+                if(esr.checked){
+                    courses+=esr.value + "<br>";
+                }
+
+                if(eee.checked){
+                    courses+=eee.value + "<br>";
+                }
+                msg.innerHTML="<h3>Selected Courses</h3>" + "<br>" + courses;
+
+            }
+        </script>
+    </head>
+    <body>
+        <div>
+            <fieldset>
+                <legend>List of courses</legend>
+                <ol>
+                    <li><input type="checkbox" id="SWE" value="Software Engineering">
+                        Software Engineering
+                    </li>
+
+                    <li><input type="checkbox" id="ML" value="Machine Learning and Data science">
+                        Machine Learning and Data science
+                    </li>
+
+                    <li><input type="checkbox" id="ESR" value="Embedded systems and Robotics">
+                        Embedded systems and Robotics
+                    </li>
+
+                    <li><input type="checkbox" id="EEE" value="Electrical and Electronics Engineering">
+                        Electrical and Electronics Engineering
+                    </li>
+                </ol>
+            </fieldset>
+            <br> <input type="button" value="Submit" onclick="Submit()">
+            <div align="center">   
+                <fieldset id="msg" ></fieldset>  
+            </div>
+        </div>
+    </body>
+</html>

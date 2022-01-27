@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <script>
+        var Products=["iphone.jpg","alexa.jpg","nike.jpg","samsung tv.jpg"];
+        var count=0;
+        function Moveback(){
+            var pic=document.getElementById("pic");
+            count--;
+            pic.src=Products[count];
+            
+        }
+        function Movenext(){
+            var pic=document.getElementById("pic");
+            count++;
+            pic.src=Products[count];
+            
+        }
+
+    </script>
+    </head>
+    <body>
+        <div>
+            <table width="600" border="2" align="center">
+                <tr>
+                    <td>
+                        <input type="button" value="Previous" onclick="Moveback()">
+                    </td>
+                
+                    <td>
+                        <img src="image.jpg" id="pic" width="300" height="300">
+                    </td>
+                
+                    <td>
+                        <input type="button" value="Next" onclick="Movenext()">
+                    </td>
+                
+                </tr>
+            </table>
+        </div>
+
+    </body>
+</html>
