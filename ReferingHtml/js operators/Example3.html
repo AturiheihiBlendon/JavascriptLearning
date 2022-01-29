@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function Submit(){
+                var Uname=document.getElementById("txtName").value;
+                var Pwd=document.getElementById("pwd").value;
+                var msg=document.getElementById("msg");
+                var Details={userName:'Blendon', Password:'Askme123?'};
+
+                if(Uname==Details.userName && Pwd==Details.Password){
+                    document.write("Login Success");
+                }
+                else{
+                    msg.innerHTML="Invalid userName/password";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div>
+            <fieldset>
+                <legend>Login</legend>
+                <dl>
+                    <dt>User Name</dt>
+                    <dd><input type="text" id="txtName"></dd>
+
+                    <dt>Password</dt>
+                    <dd><input type="password" id="pwd"></dd>
+                    <br>
+                    <input type="button" value="Login" onclick="Submit()">
+                </dl>
+            </fieldset>
+        </div>
+        <div align="center">
+            <h2 id="msg"></h2>
+        </div>
+    </body>
+</html>
