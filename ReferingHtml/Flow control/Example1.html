@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function selectHDD(){
+                var hdd=document.getElementById("IsHdd");
+                var ram=document.getElementById("IsRAM");
+                if(parseInt(hdd.value)>=5){
+                    IsRAM.disabled=false;
+                    IsHdd.disabled=true;
+                }
+            }
+
+            function selectRAM(){
+                var ram=document.getElementById("IsRAM");
+                var Graphics=document.getElementById("graphics");
+                if(ram.value>=3){
+                    IsRAM.disabled=true;
+                    graphics.disabled=false;
+                }
+            }
+
+            function selectGraphics(){
+                var Graphics=document.getElementById("graphics");
+                var Btn=document.getElementById("btn");
+                if(Graphics.value=="yes"){
+                    graphics.disabled=true;
+                    btn.disabled=false;
+                }
+            }
+
+            function install(){
+                document.write("Game installed succesfully");
+
+            }
+        </script>
+    </head>
+    <body>
+        <div>
+            <fieldset>
+                <legend>Install app</legend>
+                <dl>
+                    <dt>Select Available HDD</dt>
+                    <dd>
+                        <select id="IsHdd" onchange="selectHDD()">
+                            <option>8GB</option>
+                            <option>5GB</option>
+                            <option>2GB</option>
+                        </select>
+                    </dd>
+
+                    <dt>Select Available RAM</dt>
+                    <dd>
+                        <input type="number" min="1" max="6" value="1" id="IsRAM" disabled onchange="selectRAM()">
+                    </dd>
+
+                    <dt>Is Graphic card available</dt>
+                    <select id="graphics" disabled onchange="selectGraphics()">
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </dl>
+            </fieldset>
+        </div>
+        <div>
+            <input id="btn" type="button" value="Install" disabled onclick="install()">
+        </div>
+    </body>
+</html>
