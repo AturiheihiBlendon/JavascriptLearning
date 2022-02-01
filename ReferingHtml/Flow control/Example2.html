@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function SubmitClick(){
+                var UserDetails={userName:'Blendon', pin:0702, otp:567890};
+                var UserName= document.getElementById("txtName").value;
+                var Password=document.getElementById("pwd").value;
+                var msg=document.getElementById("msg");
+
+                if(UserDetails.userName==UserName){
+                    if(UserDetails.pin){
+                        msg.innerHTML="Pin Verified";
+                    }
+                    else if(UserDetails.otp==Password){
+                        msg.innerHTML="Otp verified";
+                    }
+                }
+                else{
+                    msg.innerHTML="Invalid user name";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <fieldset>
+            <legend>Sign in</legend>
+            User name:
+            <input type="text" id="txtName" placeholder="Type your name">
+            <br><br>
+            Pin/Otp:
+            <input type="password" id="pwd" placeholder="Enter your  pin">
+        </fieldset>
+        <br>
+        <input type="button" value="Submit" onclick="SubmitClick()">
+        <div id="msg" align="center">
+        </div>
+    </body>
+</html>

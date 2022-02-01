@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <heaad>
+        <script>
+            function Submit(){
+                var Names=[{Name:'Blendon'},{Name:'Levis'},{Name:'Nasser'},{Name:'Precious'}]
+                var userName=document.getElementById("txtName").value;
+                var msg=document.getElementById("msg");
+
+                for(var i=0; i<Names.length; i++){
+                    if(userName==Names[i].Name){
+                        msg.innerHTML="User name already taken";
+                        return;
+                    }
+                    else{
+                        msg.innerHTML="Available";
+                    }
+                }
+            }
+        </script>
+    </heaad>
+    <body>
+        <fieldset>
+            <legend>Names</legend>
+            User Name:
+            <input type="text" id="txtName" onkeyup="Submit()">
+            <span id="msg"></span>
+        </fieldset>
+    </body>
+</html>
