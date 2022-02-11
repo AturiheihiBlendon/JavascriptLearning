@@ -14,7 +14,7 @@
             function selectRAM(){
                 var ram=document.getElementById("IsRAM");
                 var Graphics=document.getElementById("graphics");
-                if(ram.value>3){
+                if(ram.value>=4){
                     IsRAM.disabled=true;
                     graphics.disabled=false;
                 }
@@ -43,9 +43,9 @@
                     <dt>Select Available HDD</dt>
                     <dd>
                         <select id="IsHdd" onchange="selectHDD()">
-                            <option>8GB</option>
-                            <option>5GB</option>
                             <option>2GB</option>
+                            <option>5GB</option>
+                            <option>8GB</option>
                         </select>
                     </dd>
 
@@ -56,8 +56,8 @@
 
                     <dt>Is Graphic card available</dt>
                     <select id="graphics" disabled onchange="selectGraphics()">
-                        <option value="yes">Yes</option>
                         <option value="no">No</option>
+                        <option value="yes">Yes</option>
                     </select>
                 </dl>
             </fieldset>
