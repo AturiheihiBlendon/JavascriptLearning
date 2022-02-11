@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<head>
+    <script>
+        function viewDetails(){
+            document.getElementById("family").innerHTML=navigator.appName;
+            document.getElementById("lang").innerHTML=navigator.language;
+            document.getElementById("cookie").innerHTML=navigator.cookieEnabled;
+            document.getElementById("agent").innerHTML=navigator.userAgent;
+            for(var i=0;i<navigator.plugins.length;i++){
+                document.getElementById("plug").innerHTML+=navigator.plugins[i].name+"<br>";
+            }
+            var msg=document.getElementById("msg");
+            if(navigator.plugins["Chrome pdf viewer"==undefined]){
+                msg.innerHTML="No";
+            }
+            else{
+                msg.innerHTML="Yes";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div align="center">
+        <input type="button" value="Get Broswer Details" onclick="viewDetails()">
+    </div>
+    <br>
+    <div>
+        <dl>
+            <dt>Browser family:</dt>
+            <dd id="family"></dd>
+            <dt>Broswer language:</dt>
+            <dd id="lang"></dd>
+            <dt>Cookie enabled:</dt>
+            <dd id="cookie"></dd>
+            <dt>Supported on:</dt>
+            <dd id="agent"></dd>
+            <dt>Plugin Supported:</dt>
+            <dd id="plug"></dd>
+            <dt>Can user view PDF:</dt>
+            <dd id="msg"></dd>
+        </dl>
+    </div>
+</body>
