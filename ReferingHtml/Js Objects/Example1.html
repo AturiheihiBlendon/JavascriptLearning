@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            var newWindow;
+            function viewlarge(){
+                newWindow=window.open("image.jpg","width=600 height=600");
+            }
+            
+        </script>
+    </head>
+    <body>
+        <div>
+            <img src="image.jpg" width="200" height="200" ondblclick="viewlarge()">
+            <p>Doble click to enlarge</p>
+        </div>
+        <div>
+            <input type="button" value="Print" onclick="window.print()">
+            <input type="button" value="Close" onclick="newWindow.close()">
+        </div>
+    </body>
+</html>
